@@ -129,8 +129,8 @@ case "${1:-}" in
     minikube start --memory="${MEMORY}" -b kubeadm --kubernetes-version "${KUBE_VERSION}"
     wait_for_ssh
     # create a link so the default dataDirHostPath will work for this environment
-    minikube ssh "sudo mkdir -p /mnt/sda1/${PWD}; sudo mkdir -p $(dirname $PWD); sudo ln -s /mnt/sda1/${PWD} $(dirname $PWD)/"
-    minikube ssh "sudo mkdir /mnt/sda1/var/lib/rook;sudo ln -s /mnt/sda1/var/lib/rook /var/lib/rook"
+    minikube ssh "sudo mkdir -p /mnt/vda1/${PWD}; sudo mkdir -p $(dirname $PWD); sudo ln -s /mnt/vda1/${PWD} $(dirname $PWD)/"
+    minikube ssh "sudo mkdir /mnt/vda1/var/lib/rook;sudo ln -s /mnt/vda1/var/lib/rook /var/lib/rook"
     copy_images "$2"
     ;;
   down)
