@@ -34,6 +34,7 @@ import (
 var validTopologyLabelKeys = []string{
 	"failure-domain.beta.kubernetes.io",
 	"failure-domain.kubernetes.io",
+	"topology.rook.io",
 }
 
 // ValidNodeNoSched returns true if the node (1) meets Rook's placement terms,
